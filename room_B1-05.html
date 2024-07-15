@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freezer Information - Room B1-05</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { text-align: center; }
+        .nav-container { text-align: center; margin-bottom: 20px; }
+        .nav-container a { margin: 0 10px; text-decoration: none; color: #007BFF; }
+        .nav-container a:hover { text-decoration: underline; }
+        .nav-container .current-room { font-weight: bold; color: #FF5733; border: 1px solid #FF5733; padding: 2px 6px; border-radius: 4px; }
+        .freezers { display: flex; flex-wrap: wrap; justify-content: center; }
+        .freezer { border: 1px solid #ccc; border-radius: 8px; padding: 10px; margin: 10px; width: 300px; height: 400px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); overflow: hidden; }
+        .freezer h2 { margin: 0; font-size: 1.2em; }
+        .dirty { color: red; }
+        .clean { color: green; }
+        .status { display: inline-block; padding: 2px 6px; border-radius: 4px; color: white; }
+        .status.offer-out { background-color: #FFB6C1; color: black; } /* Light Pink */
+        .status.dispose { background-color: #f47979; }
+        .status.keep { background-color: lightblue; }
+        .scrollable { overflow-y: auto; height: 150px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 5px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .search-container { text-align: center; margin-bottom: 20px; }
+        .search-container input { padding: 5px; width: 300px; }
+    </style>
+    <script>
+        function search() {
+            var input, filter, freezers, freezer, h2, p, table, tr, td, i, j, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            freezers = document.getElementsByClassName('freezer');
+
+            for (i = 0; i < freezers.length; i++) {
+                freezer = freezers[i];
+                h2 = freezer.getElementsByTagName('h2')[0];
+                p = freezer.getElementsByTagName('p');
+                table = freezer.getElementsByTagName('table')[0];
+                tr = table.getElementsByTagName('tr');
+
+                freezer.style.display = 'none';
+
+                if (h2) {
+                    txtValue = h2.textContent || h2.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        freezer.style.display = '';
+                        continue;
+                    }
+                }
+
+                for (j = 0; j < p.length; j++) {
+                    if (p[j]) {
+                        txtValue = p[j].textContent || p[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            freezer.style.display = '';
+                            break;
+                        }
+                    }
+                }
+
+                for (j = 1; j < tr.length; j++) {
+                    td = tr[j].getElementsByTagName('td');
+                    for (var k = 0; k < td.length; k++) {
+                        if (td[k]) {
+                            txtValue = td[k].textContent || td[k].innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                freezer.style.display = '';
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Freezer Information - Room B1-05</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="search()" placeholder="Search for library, freezer number, or room..">
+    </div>
+    <div class="nav-container">
+<a href="room_G2-12.html">G2-12</a> | <a href="room_G1-42.html">G1-42</a> | <a href="room_B1-06.html">B1-06</a> | <a href="room_G1-32.html">G1-32</a> | <a href="room_G1-33.html">G1-33</a> | <a href="room_G2-18.html">G2-18</a> | <a href="room_G1-28.html">G1-28</a> | <a href="room_B1-05.html" class="current-room">B1-05</a> | <a href="room_B1-09.html">B1-09</a>
+    </div>
+    <div class="freezers">
+
+    <div class="freezer">
+        <h2>4060</h2>
+        <p class="clean">Clean</p>
+        <p class="status dispose">Dispose</p>
+        <p>13 years old | 20.7 kwh/Day</p>
+        <p>Empty shelves: 0</p>
+        <div class="scrollable">
+            <table>
+                <tr>
+                    <th>Shelf</th>
+                    <th>Library</th>
+                    <th>Count</th>
+                </tr>
+    
+                <tr>
+                    <td>Shelf 1</td>
+                    <td>C3H iBAC</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>C3H iBAC</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>DIL NOD</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>DIL NOD</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>ZF_mu_cDNA</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>ZF_mu_cDNA</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>ZFMTP_384</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>CpG Island</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 5</td>
+                    <td>CpG Island</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 5</td>
+                    <td>PigE Bac</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>SM1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>MUS_TP_1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>MUS_TP_2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>MUS_TP_3</td>
+                    <td>1</td>
+                </tr>
+            
+            </table>
+        </div>
+    </div>
+    
+    <div class="freezer">
+        <h2>4061</h2>
+        <p class="clean">Clean</p>
+        <p class="status dispose">Dispose</p>
+        <p>19 years old | 23.4 kwh/Day</p>
+        <p>Empty shelves: 0</p>
+        <div class="scrollable">
+            <table>
+                <tr>
+                    <th>Shelf</th>
+                    <th>Library</th>
+                    <th>Count</th>
+                </tr>
+    
+                <tr>
+                    <td>Shelf 1</td>
+                    <td>IRAV</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 1</td>
+                    <td>IRAT</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 1</td>
+                    <td>IRAK</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>IRAK</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>IRAL</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>MTP Plates</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>TP96-32K</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>1Mb Set</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>FISHRP</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>FISHBACs_FL</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>FISHRPII_HindIII</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>FISHBACs_FL_Rpt</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>PiggyBac Transposase Resources</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>Pentae Liu Plasmids</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>EUCOMM plates</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 5</td>
+                    <td>EUCOMM plates</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>EUCOMM plates</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>2 boxes containing growth factors aliquots</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>A vial of matrigel</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>RNA samples from IPS cells</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>glycerol stocks of CRISPRs related construct</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>Cytokines</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>RNA</td>
+                    <td>1</td>
+                </tr>
+            
+            </table>
+        </div>
+    </div>
+    
+    <div class="freezer">
+        <h2>4063</h2>
+        <p class="clean">Clean</p>
+        <p class="status dispose">Dispose</p>
+        <p>14 years old | 20.7 kwh/Day</p>
+        <p>Empty shelves: 0</p>
+        <div class="scrollable">
+            <table>
+                <tr>
+                    <th>Shelf</th>
+                    <th>Library</th>
+                    <th>Count</th>
+                </tr>
+    
+                <tr>
+                    <td>Shelf 1</td>
+                    <td>Haem_ends</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 1</td>
+                    <td>Tvivbac</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 1</td>
+                    <td>LSFL</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 1</td>
+                    <td>Emax BACs</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 1</td>
+                    <td>TP96-32K</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>Tile path project plates (384W)</td>
+                    <td>24</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>Eimer BACs</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>CITF22</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>CJ 81176</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 5</td>
+                    <td>Cancer 2 HCC1954</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 5</td>
+                    <td>Cancer 5 HCC1395</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>ZFISHFOS</td>
+                    <td>1</td>
+                </tr>
+            
+            </table>
+        </div>
+    </div>
+    
+    <div class="freezer">
+        <h2>4064</h2>
+        <p class="clean">Clean</p>
+        <p class="status dispose">Dispose</p>
+        <p>18 years old | 21.16 kwh/Day</p>
+        
+        <p>Empty shelves: 2
+            <select>
+                <option>Shelf 5</option><option>Shelf 6</option>
+            </select>
+        </p>
+        
+        <div class="scrollable">
+            <table>
+                <tr>
+                    <th>Shelf</th>
+                    <th>Library</th>
+                    <th>Count</th>
+                </tr>
+    
+                <tr>
+                    <td>Shelf 1</td>
+                    <td>RPCI-24</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>Assorted</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>peri9 Pool 9</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>peri9 1M</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>Pig-10Mb</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>PigPreMAPTP</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>RPCI-24</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>PigMAPTP</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>peri9 Pool 1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>peri9 Pool 2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>Pig7-TP</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>Pig8-TP</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>peri9 Pool 4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>peri9 Pool 3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>peri9 Pool 6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>peri9 Pool 5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>peri9 Pool 7</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>peri9 Pool 10</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>BLOODOMICS</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>Assorted MHC</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>PigMAPTP</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>MQ1-ES</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>Normalised spleen cDNA</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>KN404-2VT</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>KN404-1MAC</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>mhc_mtpA</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>mhc eleni prep F</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>MHC</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>Oligator/Illumina</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>Chr 20 re-streaks</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>Chr 20 assorted</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>Assorted</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>Eimer BACs</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>MQ1-ES</td>
+                    <td>1</td>
+                </tr>
+            
+            </table>
+        </div>
+    </div>
+    
+    </div>
+</body>
+</html>

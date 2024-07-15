@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freezer Information - Room G2-18</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { text-align: center; }
+        .nav-container { text-align: center; margin-bottom: 20px; }
+        .nav-container a { margin: 0 10px; text-decoration: none; color: #007BFF; }
+        .nav-container a:hover { text-decoration: underline; }
+        .nav-container .current-room { font-weight: bold; color: #FF5733; border: 1px solid #FF5733; padding: 2px 6px; border-radius: 4px; }
+        .freezers { display: flex; flex-wrap: wrap; justify-content: center; }
+        .freezer { border: 1px solid #ccc; border-radius: 8px; padding: 10px; margin: 10px; width: 300px; height: 400px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); overflow: hidden; }
+        .freezer h2 { margin: 0; font-size: 1.2em; }
+        .dirty { color: red; }
+        .clean { color: green; }
+        .status { display: inline-block; padding: 2px 6px; border-radius: 4px; color: white; }
+        .status.offer-out { background-color: #FFB6C1; color: black; } /* Light Pink */
+        .status.dispose { background-color: #f47979; }
+        .status.keep { background-color: lightblue; }
+        .scrollable { overflow-y: auto; height: 150px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 5px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .search-container { text-align: center; margin-bottom: 20px; }
+        .search-container input { padding: 5px; width: 300px; }
+    </style>
+    <script>
+        function search() {
+            var input, filter, freezers, freezer, h2, p, table, tr, td, i, j, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            freezers = document.getElementsByClassName('freezer');
+
+            for (i = 0; i < freezers.length; i++) {
+                freezer = freezers[i];
+                h2 = freezer.getElementsByTagName('h2')[0];
+                p = freezer.getElementsByTagName('p');
+                table = freezer.getElementsByTagName('table')[0];
+                tr = table.getElementsByTagName('tr');
+
+                freezer.style.display = 'none';
+
+                if (h2) {
+                    txtValue = h2.textContent || h2.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        freezer.style.display = '';
+                        continue;
+                    }
+                }
+
+                for (j = 0; j < p.length; j++) {
+                    if (p[j]) {
+                        txtValue = p[j].textContent || p[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            freezer.style.display = '';
+                            break;
+                        }
+                    }
+                }
+
+                for (j = 1; j < tr.length; j++) {
+                    td = tr[j].getElementsByTagName('td');
+                    for (var k = 0; k < td.length; k++) {
+                        if (td[k]) {
+                            txtValue = td[k].textContent || td[k].innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                freezer.style.display = '';
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Freezer Information - Room G2-18</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="search()" placeholder="Search for library, freezer number, or room..">
+    </div>
+    <div class="nav-container">
+<a href="room_G2-12.html">G2-12</a> | <a href="room_G1-42.html">G1-42</a> | <a href="room_B1-06.html">B1-06</a> | <a href="room_G1-32.html">G1-32</a> | <a href="room_G1-33.html">G1-33</a> | <a href="room_G2-18.html" class="current-room">G2-18</a> | <a href="room_G1-28.html">G1-28</a> | <a href="room_B1-05.html">B1-05</a> | <a href="room_B1-09.html">B1-09</a>
+    </div>
+    <div class="freezers">
+
+    <div class="freezer">
+        <h2>4033</h2>
+        <p class="dirty">Dirty</p>
+        <p class="status dispose">Dispose</p>
+        <p>18 years old | 21.16 kwh/Day</p>
+        <p>Empty shelves: 0</p>
+        <div class="scrollable">
+            <table>
+                <tr>
+                    <th>Shelf</th>
+                    <th>Library</th>
+                    <th>Count</th>
+                </tr>
+    
+                <tr>
+                    <td>Shelf 1</td>
+                    <td>CEPH</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>CEPH</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>CITF22</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>LL22NC01</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 2</td>
+                    <td>CX Poly</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 3</td>
+                    <td>RA</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>RA</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 4</td>
+                    <td>CX999</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 5</td>
+                    <td>PY53H1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 5</td>
+                    <td>Chr12</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 5</td>
+                    <td>CGI</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>CGI</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>Shelf 6</td>
+                    <td>CPGI - Sally Cross</td>
+                    <td>1</td>
+                </tr>
+            
+            </table>
+        </div>
+    </div>
+    
+    <div class="freezer">
+        <h2>4050</h2>
+        <p class="dirty">Dirty</p>
+        <p class="status keep">Keep</p>
+        <p>7 years old | 19.98 kwh/Day</p>
+        
+        <p>Empty shelves: 4
+            <select>
+                <option>Shelf 1</option><option>Shelf 2</option><option>Shelf 3</option><option>Shelf 4</option>
+            </select>
+        </p>
+        
+        <div class="scrollable">
+            <table>
+                <tr>
+                    <th>Shelf</th>
+                    <th>Library</th>
+                    <th>Count</th>
+                </tr>
+    
+            </table>
+        </div>
+    </div>
+    
+    </div>
+</body>
+</html>
