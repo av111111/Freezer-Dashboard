@@ -1,8 +1,6 @@
 import pandas as pd
-import os
-import filecmp
 
-# URLs for the Google Sheets
+# Load the data from Google Sheets
 freezer_status_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBqu3473l0OMMlicoERthxkIYTneF9fh9jy958Q0zAb5NwVCeSDsIYUsxpnBzgl4rDoMJ7P7E1W2lM/pubhtml?gid=0&single=true"
 freezer_database_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSgeAPBmFPRxaRHnoHLG7Xt5wT_gr5A0gkgfgjiT1mLFBPgQsXFa2k9wriUvZtkl1_DB7fcrTnV0DUj/pubhtml?gid=0&single=true"
 
@@ -174,7 +172,7 @@ def generate_room_html(room_number, status_df, database_df):
                 if (h2) {{
                     txtValue = h2.textContent || h2.innerText;
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {{
-                                                freezer.style.display = '';
+                        freezer.style.display = '';
                         continue;
                     }}
                 }}
@@ -240,38 +238,18 @@ def generate_room_html(room_number, status_df, database_df):
 
 # Generate HTML for all rooms and save to files
 def generate_all_room_html():
-    changes_detected = False
-
     for room in unique_rooms:
         html_content = generate_room_html(room, freezer_status, freezer_database)
-        output_path = f'public/room_{room}.html'
-
-        # Check if the file already exists and if its content is different
-        if os.path.exists(output_path):
-            with open(output_path, 'r') as file:
-                existing_content = file.read()
-                if existing_content != html_content:
-                    changes_detected = True
-                    with open(output_path, 'w') as file:
-                        file.write(html_content)
-        else:
-            changes_detected = True
-            with open(output_path, 'w') as file:
-                file.write(html_content)
-
-    return changes_detected
+        output_path = f'room_{room}.html'
+        with open(output_path, 'w') as file:
+            file.write(html_content)
 
 if __name__ == "__main__":
-    os.makedirs('public', exist_ok=True)
-    changes = generate_all_room_html()
+    generate_all_room_html()
+    print("HTML pages generated for each room.")
 
-    if changes:
-        print("Changes detected. HTML pages generated and updated.")
-        # Commit and push changes if any
-        os.system('git config --global user.name "github-actions[bot]"')
-        os.system('git config --global user.email "github-actions[bot]@users.noreply.github.com"')
-        os.system('git add public')
-        os.system('git commit -m "Update HTML files"')
-        os.system('git push origin main')
-    else:
-        print("No changes detected. HTML pages are up to date.")
+    # Print the first few rows of each dataframe to verify the changes
+    print("\nFirst few rows of Freezer Status:")
+    print(freezer_status.head())
+    print("\nFirst few rows of Freezer Database:")
+    print(freezer_database.head())
