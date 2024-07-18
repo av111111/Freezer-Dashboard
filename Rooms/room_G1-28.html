@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room G1-28</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { text-align: center; display: flex; align-items: center; justify-content: center; }
+        .nav-container { text-align: center; margin-bottom: 20px; }
+        .nav-container a { margin: 0 10px; text-decoration: none; color: #007BFF; }
+        .nav-container a:hover { text-decoration: underline; }
+        .nav-container .current-room { font-weight: bold; color: #FF5733; border: 1px solid #FF5733; padding: 2px 6px; border-radius: 4px; }
+        .freezers { display: flex; flex-wrap: wrap; justify-content: center; }
+        .freezer { border: 1px solid #ccc; border-radius: 8px; padding: 10px; margin: 10px; width: 300px; height: 400px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); overflow: hidden; }
+        .freezer h2 { margin: 0; font-size: 1.2em; }
+        .dirty { color: red; }
+        .clean { color: green; }
+        .status { display: inline-block; padding: 2px 6px; border-radius: 4px; color: white; }
+        .status.offer-out { background-color: #FFB6C1; color: black; } /* Light Pink */
+        .status.dispose { background-color: #f47979; }
+        .status.keep { background-color: lightblue; }
+        .scrollable { overflow-y: auto; height: 250px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 5px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .search-container { text-align: center; margin-bottom: 20px; }
+        .search-container input { padding: 5px; width: 300px; }
+        .logo-container { display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .logo-container img { margin-right: 10px; width: 100px; cursor: pointer; }
+        .home-logo { width: 25px; height: 25px; margin-right: 10px; }
+        .dashboard-title { display: flex; align-items: center; justify-content: center; }
+        .capacity { display: flex; align-items: center; }
+        .shelf {
+            width: 60px;
+            height: 20px;
+            margin: 0px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+            font-size: 10px;
+            display: inline-block;
+        }
+        .occupied { background-color: orange; }
+        .free { background-color: green; }
+    </style>
+    <script>
+        function filterTable(freezerNumber, shelf) {
+            var table, tr, td, i, txtValue;
+            table = document.getElementById("contentsTable_" + freezerNumber);
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) {
+                tr[i].style.display = "none";
+                td = tr[i].getElementsByTagName("td");
+                if (td[0]) {
+                    txtValue = td[0].textContent || td[0].innerText;
+                    if (txtValue.indexOf(shelf) > -1) {
+                        tr[i].style.display = "";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="../Sanger_Logo.png" alt="Sanger Logo">
+        <img src="../bio_r_logo.png" alt="BIO/R Logo">
+    </div>
+    <h1 class="dashboard-title">
+        <a href="../HomePage/index.html"><img src="../home.jpg" alt="Home Logo" class="home-logo"></a>
+        Freezer Information - Room G1-28
+    </h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="search()" placeholder="Search for library, freezer number, or room..">
+    </div>
+    <div class="nav-container">
+<a href="room_G2-12.html">G2-12</a> | <a href="room_G1-42.html">G1-42</a> | <a href="room_B1-06.html">B1-06</a> | <a href="room_G1-32.html">G1-32</a> | <a href="room_G1-33.html">G1-33</a> | <a href="room_G2-18.html">G2-18</a> | <a href="room_G1-28.html" class="current-room">G1-28</a> | <a href="room_B1-05.html">B1-05</a> | <a href="room_B1-09.html">B1-09</a>
+    </div>
+    <div class="freezers">
+
+        <div class="freezer" data-room="G1-28">
+            <h2><a href="../Freezer/freezer_4058.html">4058</a></h2>
+            <p><span class="dirty">Dirty</span> | <span class="status dispose">Dispose</span></p>
+            <p>19 years old | 21.16 kwh/Day</p>
+            <p>Capacity: 5 / 5</p>
+            <div class="capacity"><div class="shelf free" onclick="filterTable('4058', '1')">1</div><div class="shelf free" onclick="filterTable('4058', '2')">2</div><div class="shelf free" onclick="filterTable('4058', '3')">3</div><div class="shelf free" onclick="filterTable('4058', '4')">4</div><div class="shelf free" onclick="filterTable('4058', '5')">5</div></div>
+            <div class="scrollable">
+                <table id="contentsTable_4058">
+                    <tr>
+                        <th>Shelf</th>
+                        <th>Library</th>
+                        <th>Count</th>
+                    </tr>
+        
+                    <tr>
+                        <td>Shelf 1</td>
+                        <td>LL09NC01</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 2</td>
+                        <td>AM4Y</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 2</td>
+                        <td>Chr22</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 2</td>
+                        <td>Chr9</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 2</td>
+                        <td>LL0XNC01</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 2</td>
+                        <td>SC22cB</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 2</td>
+                        <td>SCXcC</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 3</td>
+                        <td>CGI</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 3</td>
+                        <td>SC7cD</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 4</td>
+                        <td>CGI</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 4</td>
+                        <td>H9</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 4</td>
+                        <td>Pfizer HB1</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 4</td>
+                        <td>U937</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 5</td>
+                        <td>Cosmids</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 5</td>
+                        <td>SC6cA</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 5</td>
+                        <td>U937</td>
+                        <td>1</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Shelf 5</td>
+                        <td>dJ_A</td>
+                        <td>1</td>
+                    </tr>
+            
+                </table>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

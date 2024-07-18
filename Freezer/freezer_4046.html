@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freezer Information - 4046</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1 { text-align: center; display: flex; align-items: center; justify-content: center; }
+        .freezer-info { max-width: 1200px; margin: 0 auto; text-align: left; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .logo-container { display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .logo-container img { margin-right: 10px; width: 100px; cursor: pointer; }
+        .home-logo { width: 25px; height: 25px; margin-right: 10px; }
+        .dashboard-title { display: flex; align-items: center; justify-content: center; }
+        .condition { color: red; }
+        .status { display: inline-block; padding: 2px 6px; border-radius: 4px; color: white; }
+        .status.offer-out { background-color: #FFB6C1; color: black; }
+        .status.dispose { background-color: #f47979; }
+        .status.keep { background-color: lightblue; }
+        .capacity { display: flex; align-items: center; }
+        .shelf {
+            width: 60px;
+            height: 20px;
+            margin: 0px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        .occupied { background-color: orange; }
+        .free { background-color: green; }
+        .clear-selection {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, j, txtValue;
+            input = document.getElementById("filterInput").getElementsByTagName("input");
+            filter = [];
+            for (i = 0; i < input.length; i++) {
+                filter.push(input[i].value.toUpperCase());
+            }
+            table = document.getElementById("contentsTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 2; i < tr.length; i++) {
+                tr[i].style.display = "none";
+                td = tr[i].getElementsByTagName("td");
+                for (j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        txtValue = td[j].textContent || td[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter[j]) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        function filterShelf(shelf) {
+            var table, tr, td, i, txtValue;
+            table = document.getElementById("contentsTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 2; i < tr.length; i++) {
+                tr[i].style.display = "none";
+                td = tr[i].getElementsByTagName("td");
+                if (td[0]) {
+                    txtValue = td[0].textContent || td[0].innerText;
+                    if (txtValue.indexOf(shelf) > -1) {
+                        tr[i].style.display = "";
+                    }
+                }
+            }
+        }
+
+        function clearFilter() {
+            var table, tr, i;
+            table = document.getElementById("contentsTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 2; i < tr.length; i++) {
+                tr[i].style.display = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="../Sanger_Logo.png" alt="Sanger Logo">
+        <img src="../bio_r_logo.png" alt="BIO/R Logo">
+    </div>
+    <h1 class="dashboard-title">
+        <a href="../HomePage/index.html"><img src="../home.jpg" alt="Home Logo" class="home-logo"></a>
+        Freezer Information - 4046
+    </h1>
+    <div class="freezer-info">
+        <h2>Details</h2>
+        <p>Room Number: <a href="../Rooms/room_B1-06.html">B1-06</a></p>
+        <p>Condition: <span class="condition">Dirty</span></p>
+        <p>Status: <span class="status offer out">Offer Out</span></p>
+        <p>Age: 11 years</p>
+        <p>Energy Use: 11.6 kwh/Day</p>
+        <p>Capacity: 6 / 6</p>
+        <div class="capacity"><div class="shelf occupied" onclick="filterShelf('Shelf 1')">Shelf 1</div><div class="shelf occupied" onclick="filterShelf('Shelf 2')">Shelf 2</div><div class="shelf occupied" onclick="filterShelf('Shelf 3')">Shelf 3</div><div class="shelf occupied" onclick="filterShelf('Shelf 4')">Shelf 4</div><div class="shelf occupied" onclick="filterShelf('Shelf 5')">Shelf 5</div><div class="shelf occupied" onclick="filterShelf('Shelf 6')">Shelf 6</div></div>
+        <button class="clear-selection" onclick="clearFilter()">Clear selection</button>
+        <h2>Contents</h2>
+        <table id="contentsTable">
+            <tr>
+                <th>Shelf</th>
+                <th>Library</th>
+                <th>Sub-library Name</th>
+                <th>Alt. Library Name</th>
+                <th>Description</th>
+                <th>Well Format</th>
+                <th>Copy Type</th>
+                <th>Plate Number</th>
+            </tr>
+            <tr id="filterInput">
+                <td><input type="text" onkeyup="filterTable()" placeholder="Filter Shelf"></td>
+                <td><input type="text" onkeyup="filterTable()" placeholder="Filter Library"></td>
+                <td><input type="text" onkeyup="filterTable()" placeholder="Filter Sub-library Name"></td>
+                <td><input type="text" onkeyup="filterTable()" placeholder="Filter Alt. Library Name"></td>
+                <td><input type="text" onkeyup="filterTable()" placeholder="Filter Description"></td>
+                <td><input type="text" onkeyup="filterTable()" placeholder="Filter Well Format"></td>
+                <td><input type="text" onkeyup="filterTable()" placeholder="Filter Copy Type"></td>
+                <td><input type="text" onkeyup="filterTable()" placeholder="Filter Plate Number"></td>
+            </tr>
+    
+        <tr>
+            <td>Shelf 1</td>
+            <td>U937</td>
+            <td></td>
+            <td></td>
+            <td>Human Monocyte (see folder)?</td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>1 - 312</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 2</td>
+            <td>U937</td>
+            <td></td>
+            <td></td>
+            <td>Human Monocyte (see folder)?</td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>313 - 546</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 2</td>
+            <td>SC1pB</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>1 - 66</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 3</td>
+            <td>SC1pB</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>67 - 75</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 3</td>
+            <td>SCXcC</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>1 - 224</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 3</td>
+            <td>22CGIB</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>1 - 72</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>22CGIB</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>73 - 200</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>SC6cA</td>
+            <td></td>
+            <td>cA</td>
+            <td>Sanger Centre Human Chromosome 6-specific cosmid library</td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>1 - 180</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 5</td>
+            <td>SC6cA</td>
+            <td></td>
+            <td>cA</td>
+            <td>Sanger Centre Human Chromosome 6-specific cosmid library</td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>181 - 240</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 5</td>
+            <td>SC22dS</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>1 - 10</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 5</td>
+            <td>SC22cB</td>
+            <td></td>
+            <td>cB</td>
+            <td>Sanger Centre human chromosome 22-specific cosmid library SC22cB</td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>1 - 130</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 5</td>
+            <td>H9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Back-up</td>
+            <td>1 - 136</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>SC2MBAC</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>1 - 11</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>Pfizer</td>
+            <td></td>
+            <td></td>
+            <td>Human Pfizer library</td>
+            <td>96 Well</td>
+            <td>Back-up</td>
+            <td>1 - 136</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>U937</td>
+            <td></td>
+            <td></td>
+            <td>Human Monocyte (see folder)?</td>
+            <td>384 Well</td>
+            <td>Back-up</td>
+            <td>1 - 135</td>
+        </tr>
+        
+        </table>
+    </div>
+</body>
+</html>
+    

@@ -1,0 +1,279 @@
+Freezer,Shelf,Status
+4002,Shelf 1,Occupied
+4002,Shelf 2,Occupied
+4002,Shelf 3,Occupied
+4002,Shelf 4,Occupied
+4002,Total,Occupancy Rate: 100.00%
+4007,Shelf 1,Occupied
+4007,Shelf 2,Occupied
+4007,Shelf 3,Occupied
+4007,Shelf 4,Occupied
+4007,Shelf 5,Occupied
+4007,Shelf 6,Occupied
+4007,Total,Occupancy Rate: 100.00%
+4008,Shelf 1,Empty
+4008,Shelf 2,Empty
+4008,Shelf 3,Empty
+4008,Shelf 4,Empty
+4008,Shelf 5,Occupied
+4008,Shelf 6,Occupied
+4008,Total,Occupancy Rate: 33.33%
+4009,Shelf 1,Occupied
+4009,Shelf 2,Occupied
+4009,Shelf 3,Occupied
+4009,Shelf 4,Occupied
+4009,Shelf 5,Empty
+4009,Shelf 6,Empty
+4009,Total,Occupancy Rate: 66.67%
+4011,Shelf 1,Occupied
+4011,Shelf 2,Occupied
+4011,Shelf 3,Occupied
+4011,Shelf 4,Occupied
+4011,Shelf 5,Empty
+4011,Shelf 6,Occupied
+4011,Total,Occupancy Rate: 83.33%
+4012,Shelf 1,Occupied
+4012,Shelf 2,Occupied
+4012,Shelf 3,Occupied
+4012,Shelf 4,Occupied
+4012,Shelf 5,Occupied
+4012,Shelf 6,Occupied
+4012,Total,Occupancy Rate: 100.00%
+4014,Shelf 1,Empty
+4014,Shelf 2,Occupied
+4014,Shelf 3,Occupied
+4014,Shelf 4,Occupied
+4014,Shelf 5,Occupied
+4014,Shelf 6,Occupied
+4014,Total,Occupancy Rate: 83.33%
+4015,Shelf 1,Occupied
+4015,Shelf 2,Occupied
+4015,Shelf 3,Occupied
+4015,Shelf 4,Occupied
+4015,Shelf 5,Occupied
+4015,Shelf 6,Occupied
+4015,Shelf 7,Occupied
+4015,Total,Occupancy Rate: 100.00%
+4018,Shelf 1,Occupied
+4018,Shelf 2,Occupied
+4018,Shelf 3,Occupied
+4018,Shelf 4,Occupied
+4018,Shelf 5,Occupied
+4018,Shelf 6,Empty
+4018,Total,Occupancy Rate: 83.33%
+4019,Shelf 1,Occupied
+4019,Shelf 2,Occupied
+4019,Shelf 3,Occupied
+4019,Shelf 4,Empty
+4019,Shelf 5,Occupied
+4019,Shelf 6,Occupied
+4019,Total,Occupancy Rate: 83.33%
+4021,Total,Occupancy Rate: 0.00%
+4022,Shelf 1,Occupied
+4022,Shelf 2,Occupied
+4022,Shelf 3,Occupied
+4022,Shelf 4,Occupied
+4022,Total,Occupancy Rate: 100.00%
+4023,Shelf 1,Occupied
+4023,Shelf 2,Occupied
+4023,Shelf 3,Occupied
+4023,Shelf 4,Occupied
+4023,Total,Occupancy Rate: 100.00%
+4024,Shelf 1,Occupied
+4024,Shelf 2,Occupied
+4024,Shelf 3,Occupied
+4024,Shelf 4,Occupied
+4024,Shelf 5,Occupied
+4024,Shelf 6,Occupied
+4024,Total,Occupancy Rate: 100.00%
+4025,Shelf 1,Occupied
+4025,Shelf 2,Occupied
+4025,Shelf 3,Occupied
+4025,Shelf 4,Occupied
+4025,Shelf 5,Occupied
+4025,Shelf 6,Occupied
+4025,Total,Occupancy Rate: 100.00%
+4026,Shelf 1,Occupied
+4026,Shelf 2,Occupied
+4026,Shelf 3,Occupied
+4026,Shelf 4,Occupied
+4026,Total,Occupancy Rate: 100.00%
+4027,Shelf 1,Occupied
+4027,Shelf 2,Occupied
+4027,Shelf 3,Occupied
+4027,Shelf 4,Occupied
+4027,Shelf 5,Occupied
+4027,Shelf 6,Occupied
+4027,Total,Occupancy Rate: 100.00%
+4028,Shelf 1,Empty
+4028,Shelf 2,Empty
+4028,Shelf 3,Occupied
+4028,Shelf 4,Occupied
+4028,Shelf 5,Occupied
+4028,Total,Occupancy Rate: 60.00%
+4029,Shelf 1,Occupied
+4029,Shelf 2,Empty
+4029,Shelf 3,Empty
+4029,Shelf 4,Empty
+4029,Total,Occupancy Rate: 25.00%
+4031,Shelf 1,Empty
+4031,Shelf 2,Empty
+4031,Shelf 3,Empty
+4031,Shelf 4,Occupied
+4031,Shelf 5,Occupied
+4031,Shelf 6,Occupied
+4031,Total,Occupancy Rate: 50.00%
+4032,Shelf 1,Occupied
+4032,Shelf 2,Occupied
+4032,Shelf 3,Empty
+4032,Shelf 4,Occupied
+4032,Shelf 5,Occupied
+4032,Shelf 6,Occupied
+4032,Total,Occupancy Rate: 83.33%
+4033,Shelf 1,Occupied
+4033,Shelf 2,Occupied
+4033,Shelf 3,Occupied
+4033,Shelf 4,Occupied
+4033,Shelf 5,Occupied
+4033,Shelf 6,Occupied
+4033,Total,Occupancy Rate: 100.00%
+4036,1,Occupied
+4036,2,Occupied
+4036,3,Occupied
+4036,4,Occupied
+4036,Total,Occupancy Rate: 100.00%
+4038,Shelf 1,Occupied
+4038,Shelf 2,Occupied
+4038,Shelf 3,Occupied
+4038,Shelf 4,Occupied
+4038,Shelf 5,Occupied
+4038,Shelf 6,Occupied
+4038,Total,Occupancy Rate: 100.00%
+4039,Shelf 1,Occupied
+4039,Shelf 2,Occupied
+4039,Shelf 3,Occupied
+4039,Shelf 4,Occupied
+4039,Shelf 5,Occupied
+4039,Shelf 6,Occupied
+4039,Total,Occupancy Rate: 100.00%
+4040,Shelf 1,Occupied
+4040,Shelf 3,Occupied
+4040,Shelf 4,Occupied
+4040,Shelf 5,Empty
+4040,Shelf 6,Occupied
+4040,Total,Occupancy Rate: 80.00%
+4042,Shelf 1,Empty
+4042,Shelf 2,Empty
+4042,Shelf 3,Occupied
+4042,Shelf 4,Occupied
+4042,Shelf 5,Occupied
+4042,Shelf 6,Occupied
+4042,Total,Occupancy Rate: 66.67%
+4046,Shelf 1,Occupied
+4046,Shelf 2,Occupied
+4046,Shelf 3,Occupied
+4046,Shelf 4,Occupied
+4046,Shelf 5,Occupied
+4046,Shelf 6,Occupied
+4046,Total,Occupancy Rate: 100.00%
+4048,Shelf 1,Occupied
+4048,Shelf 2,Occupied
+4048,Shelf 3,Occupied
+4048,Shelf 4,Occupied
+4048,Total,Occupancy Rate: 100.00%
+4049,Shelf 1,Occupied
+4049,Shelf 2,Occupied
+4049,Shelf 3,Occupied
+4049,Shelf 4,Occupied
+4049,Shelf 5,Empty
+4049,Shelf 6,Occupied
+4049,Total,Occupancy Rate: 83.33%
+4050,Shelf 1,Empty
+4050,Shelf 2,Empty
+4050,Shelf 3,Empty
+4050,Shelf 4,Empty
+4050,Total,Occupancy Rate: 0.00%
+4051,Shelf 1,Occupied
+4051,Shelf 2,Occupied
+4051,Shelf 3,Occupied
+4051,Shelf 4,Occupied
+4051,Shelf 5,Occupied
+4051,Shelf 6,Occupied
+4051,Total,Occupancy Rate: 100.00%
+4052,Shelf 2,Occupied
+4052,Shelf 3,Empty
+4052,Shelf 4,Empty
+4052,Shelf 5,Empty
+4052,Total,Occupancy Rate: 25.00%
+4054,Shelf 1,Occupied
+4054,Shelf 2,Occupied
+4054,Shelf 3,Occupied
+4054,Shelf 4,Occupied
+4054,Shelf 5,Occupied
+4054,Shelf 6,Occupied
+4054,Total,Occupancy Rate: 100.00%
+4055,Shelf 1,Occupied
+4055,Shelf 2,Occupied
+4055,Shelf 3,Occupied
+4055,Shelf 4,Occupied
+4055,Total,Occupancy Rate: 100.00%
+4057,Shelf 1,Occupied
+4057,Shelf 2,Occupied
+4057,Shelf 3,Occupied
+4057,Shelf 4,Occupied
+4057,Total,Occupancy Rate: 100.00%
+4058,Shelf 1,Occupied
+4058,Shelf 2,Occupied
+4058,Shelf 3,Occupied
+4058,Shelf 4,Occupied
+4058,Shelf 5,Occupied
+4058,Total,Occupancy Rate: 100.00%
+4060,Shelf 1,Occupied
+4060,Shelf 2,Occupied
+4060,Shelf 3,Occupied
+4060,Shelf 4,Occupied
+4060,Shelf 5,Occupied
+4060,Shelf 6,Occupied
+4060,Total,Occupancy Rate: 100.00%
+4061,Shelf 1,Occupied
+4061,Shelf 2,Occupied
+4061,Shelf 3,Occupied
+4061,Shelf 4,Occupied
+4061,Shelf 5,Occupied
+4061,Shelf 6,Occupied
+4061,Total,Occupancy Rate: 100.00%
+4063,Shelf 1,Occupied
+4063,Shelf 2,Occupied
+4063,Shelf 3,Occupied
+4063,Shelf 5,Occupied
+4063,Shelf 6,Occupied
+4063,Total,Occupancy Rate: 100.00%
+4064,Shelf 1,Occupied
+4064,Shelf 2,Occupied
+4064,Shelf 3,Occupied
+4064,Shelf 4,Occupied
+4064,Shelf 5,Empty
+4064,Shelf 6,Empty
+4064,Total,Occupancy Rate: 66.67%
+4068,Shelf 1,Occupied
+4068,Shelf 2,Occupied
+4068,Shelf 3,Occupied
+4068,Shelf 4,Occupied
+4068,Shelf 7,Occupied
+4068,Shelf 6,Occupied
+4068,Shelf 5,Occupied
+4068,Total,Occupancy Rate: 100.00%
+4069,Shelf 1,Empty
+4069,Shelf 2,Empty
+4069,Shelf 3,Empty
+4069,Shelf 4,Empty
+4069,Shelf 5,Empty
+4069,Shelf 6,Empty
+4069,Total,Occupancy Rate: 0.00%
+4070,Shelf 1,Occupied
+4070,Shelf 2,Occupied
+4070,Shelf 3,Occupied
+4070,Shelf 4,Empty
+4070,Shelf 5,Occupied
+4070,Shelf 6,Occupied
+4070,Total,Occupancy Rate: 83.33%

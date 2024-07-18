@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioResource Freezer Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { text-align: center; display: flex; align-items: center; justify-content: center; }
+        .rooms-container { display: flex; flex-wrap: wrap; justify-content: center; }
+        .room { border: 1px solid #ccc; border-radius: 8px; padding: 10px; margin: 10px; width: 300px; transition: all 0.3s; }
+        .room.collapsed { padding: 5px; border-width: 1px; }
+        .room h2 { margin: 0; font-size: 1.5em; display: flex; justify-content: space-between; align-items: center; }
+        .freezers { display: flex; flex-direction: column; }
+        .freezer { border: 1px solid #ccc; border-radius: 8px; padding: 10px; margin: 10px; width: 200px; height: 100px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); overflow: hidden; }
+        .freezer h3 { margin: 0; font-size: 1.2em; }
+        .dirty { color: red; }
+        .clean { color: green; }
+        .status { display: inline-block; padding: 2px 6px; border-radius: 4px; color: white; }
+        .status.offer-out { background-color: #FFB6C1; color: black; } /* Light Pink */
+        .status.dispose { background-color: #f47979; }
+        .status.keep { background-color: lightblue; }
+        .capacity { display: flex; align-items: center; }
+        .search-container { text-align: center; margin-bottom: 20px; }
+        .search-container input { padding: 5px; width: 300px; }
+        .collapse-button { cursor: pointer; }
+        .collapsed { display: none; }
+        .logo-container { display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .logo-container img { margin-right: 10px; width: 100px; cursor: pointer; }
+        .home-logo { width: 25px; height: 25px; margin-right: 10px; }
+        .dashboard-title { display: flex; align-items: center; justify-content: center; }
+    </style>
+    <script>
+        function toggleRoom(roomId, imgElement) {
+            var roomElement = document.getElementById(roomId);
+            if (roomElement.classList.contains('collapsed')) {
+                roomElement.classList.remove('collapsed');
+                imgElement.src = '../expand-less.jpg';
+            } else {
+                roomElement.classList.add('collapsed');
+                imgElement.src = '../expand-more.jpg';
+            }
+        }
+
+        function searchHomepage() {
+            var input, filter, rooms, freezers, i, txtValue, roomVisible;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            rooms = document.getElementsByClassName('room');
+            freezers = document.getElementsByClassName('freezer');
+
+            for (i = 0; i < rooms.length; i++) {
+                roomVisible = false;
+                freezers = rooms[i].getElementsByClassName('freezer');
+                for (j = 0; j < freezers.length; j++) {
+                    txtValue = freezers[j].textContent || freezers[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        freezers[j].style.display = '';
+                        roomVisible = true;
+                    } else {
+                        freezers[j].style.display = 'none';
+                    }
+                }
+                rooms[i].style.display = roomVisible ? '' : 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="../Sanger_Logo.png" alt="Sanger Logo">
+        <img src="../bio_r_logo.png" alt="BIO/R Logo">
+    </div>
+    <h1 class="dashboard-title">
+        <a href="index.html"><img src="../home.jpg" alt="Home Logo" class="home-logo"></a>
+        BioResource Freezer Dashboard
+    </h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="searchHomepage()" placeholder="Search for freezers or rooms..">
+    </div>
+    <div class="rooms-container">
+
+        <div class="room">
+            <h2><a href="../Rooms/room_G2-12.html">G2-12</a> <img src="../expand-less.jpg" class="collapse-button" onclick="toggleRoom('room_G2-12_content', this)"></h2>
+            <div id="room_G2-12_content" class="room-content">
+                <div class="freezers">
+        
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4002.html">4002</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status offer out">Offer Out</span></p>
+                        <p>Capacity: 4 / 4</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4021.html">4021</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status keep">keep</span></p>
+                        <p>Capacity: 0 / 0</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4022.html">4022</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 4 / 4</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4023.html">4023</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status keep">keep</span></p>
+                        <p>Capacity: 4 / 4</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4029.html">4029</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status keep">Keep</span></p>
+                        <p>Capacity: 4 / 4</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4048.html">4048</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status keep">Keep</span></p>
+                        <p>Capacity: 4 / 4</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4055.html">4055</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status keep">Keep</span></p>
+                        <p>Capacity: 4 / 4</p>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        
+        <div class="room">
+            <h2><a href="../Rooms/room_G1-42.html">G1-42</a> <img src="../expand-less.jpg" class="collapse-button" onclick="toggleRoom('room_G1-42_content', this)"></h2>
+            <div id="room_G1-42_content" class="room-content">
+                <div class="freezers">
+        
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4007.html">4007</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status offer out">Offer Out</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4015.html">4015</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 7 / 7</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4019.html">4019</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4024.html">4024</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status offer out">Offer Out</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        
+        <div class="room">
+            <h2><a href="../Rooms/room_B1-06.html">B1-06</a> <img src="../expand-less.jpg" class="collapse-button" onclick="toggleRoom('room_B1-06_content', this)"></h2>
+            <div id="room_B1-06_content" class="room-content">
+                <div class="freezers">
+        
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4008.html">4008</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4011.html">4011</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4026.html">4026</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 4 / 4</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4046.html">4046</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status offer out">Offer Out</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4049.html">4049</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        
+        <div class="room">
+            <h2><a href="../Rooms/room_G1-32.html">G1-32</a> <img src="../expand-less.jpg" class="collapse-button" onclick="toggleRoom('room_G1-32_content', this)"></h2>
+            <div id="room_G1-32_content" class="room-content">
+                <div class="freezers">
+        
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4009.html">4009</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status keep">Keep</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4012.html">4012</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status offer out">Offer Out</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4014.html">4014</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status keep">Keep</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4025.html">4025</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4027.html">4027</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status keep">Keep</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4028.html">4028</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status offer out">Offer Out</span></p>
+                        <p>Capacity: 5 / 5</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4038.html">4038</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4039.html">4039</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status keep">Keep</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4040.html">4040</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status keep">Keep</span></p>
+                        <p>Capacity: 5 / 5</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4051.html">4051</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4052.html">4052</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 4 / 4</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4057.html">4057</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 4 / 4</p>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        
+        <div class="room">
+            <h2><a href="../Rooms/room_G1-33.html">G1-33</a> <img src="../expand-less.jpg" class="collapse-button" onclick="toggleRoom('room_G1-33_content', this)"></h2>
+            <div id="room_G1-33_content" class="room-content">
+                <div class="freezers">
+        
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4018.html">4018</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4031.html">4031</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4032.html">4032</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4036.html">4036</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 4 / 4</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4042.html">4042</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4054.html">4054</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status keep">Keep</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4069.html">4069</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status keep">Keep</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4070.html">4070</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status keep">Keep</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        
+        <div class="room">
+            <h2><a href="../Rooms/room_G2-18.html">G2-18</a> <img src="../expand-less.jpg" class="collapse-button" onclick="toggleRoom('room_G2-18_content', this)"></h2>
+            <div id="room_G2-18_content" class="room-content">
+                <div class="freezers">
+        
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4033.html">4033</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4050.html">4050</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status keep">Keep</span></p>
+                        <p>Capacity: 4 / 4</p>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        
+        <div class="room">
+            <h2><a href="../Rooms/room_G1-28.html">G1-28</a> <img src="../expand-less.jpg" class="collapse-button" onclick="toggleRoom('room_G1-28_content', this)"></h2>
+            <div id="room_G1-28_content" class="room-content">
+                <div class="freezers">
+        
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4058.html">4058</a></h3>
+                        <p><span class="dirty">Dirty</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 5 / 5</p>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        
+        <div class="room">
+            <h2><a href="../Rooms/room_B1-05.html">B1-05</a> <img src="../expand-less.jpg" class="collapse-button" onclick="toggleRoom('room_B1-05_content', this)"></h2>
+            <div id="room_B1-05_content" class="room-content">
+                <div class="freezers">
+        
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4060.html">4060</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4061.html">4061</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4063.html">4063</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 5 / 5</p>
+                    </div>
+            
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4064.html">4064</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status dispose">Dispose</span></p>
+                        <p>Capacity: 6 / 6</p>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        
+        <div class="room">
+            <h2><a href="../Rooms/room_B1-09.html">B1-09</a> <img src="../expand-less.jpg" class="collapse-button" onclick="toggleRoom('room_B1-09_content', this)"></h2>
+            <div id="room_B1-09_content" class="room-content">
+                <div class="freezers">
+        
+                    <div class="freezer">
+                        <h3><a href="../Freezer/freezer_4068.html">4068</a></h3>
+                        <p><span class="clean">Clean</span> | <span class="status offer out">Offer Out</span></p>
+                        <p>Capacity: 7 / 7</p>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
+    
