@@ -116,8 +116,8 @@
         <p>Status: <span class="status keep">Keep</span></p>
         <p>Age: Clean years</p>
         <p>Energy Use: 7 kwh/Day</p>
-        <p>Capacity: 0 / 0</p>
-        <div class="capacity"></div>
+        <p>Capacity: 4 / 5</p>
+        <div class="capacity"><div class="shelf occupied" onclick="filterShelf('Shelf 1')">Shelf 1</div><div class="shelf occupied" onclick="filterShelf('Shelf 3')">Shelf 3</div><div class="shelf occupied" onclick="filterShelf('Shelf 4')">Shelf 4</div><div class="shelf free" onclick="filterShelf('Shelf 5')">Shelf 5</div><div class="shelf occupied" onclick="filterShelf('Shelf 6')">Shelf 6</div></div>
         <button class="clear-selection" onclick="clearFilter()">Clear selection</button>
         <h2>Contents</h2>
         <table id="contentsTable">
@@ -142,6 +142,314 @@
                 <td><input type="text" onkeyup="filterTable()" placeholder="Filter Plate Number"></td>
             </tr>
     
+        <tr>
+            <td>Shelf 1</td>
+            <td>huRNAi</td>
+            <td></td>
+            <td></td>
+            <td>no info found</td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>2011 - 2070</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 1</td>
+            <td>huRNAi</td>
+            <td></td>
+            <td></td>
+            <td>no info found</td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>2071 - 2195</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 3</td>
+            <td>INRA_pigtilepath</td>
+            <td></td>
+            <td>bI; SBAB</td>
+            <td>Pig Tile Path</td>
+            <td>384 Well</td>
+            <td>Working</td>
+            <td>1 - 91</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 3</td>
+            <td>96TP_PigX</td>
+            <td></td>
+            <td></td>
+            <td>Tile path project plates</td>
+            <td>96 Well</td>
+            <td>Working</td>
+            <td>1 - 11</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 3</td>
+            <td>DH10B</td>
+            <td></td>
+            <td></td>
+            <td>A white box containing DH10B Ependorf tubes</td>
+            <td>Tubes</td>
+            <td></td>
+            <td>7</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 3</td>
+            <td>Nancy Holroyd</td>
+            <td></td>
+            <td></td>
+            <td>Falcon tubes named with Nancy Holroyd</td>
+            <td>Tubes</td>
+            <td>Unknown</td>
+            <td>3</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 3</td>
+            <td>DH10B Master Stock</td>
+            <td></td>
+            <td></td>
+            <td>Dated 22-12-06</td>
+            <td>Tube</td>
+            <td>Unknown</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>P Jazz Berg Boxes</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Unknown</td>
+            <td>assorted</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>GRC_MUS</td>
+            <td></td>
+            <td></td>
+            <td>in house plate</td>
+            <td>96 Well</td>
+            <td>Back-up</td>
+            <td>plate 31</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>GRC_MUS</td>
+            <td></td>
+            <td></td>
+            <td>in house plate</td>
+            <td>96 Well</td>
+            <td>Working</td>
+            <td>plate 31</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>ZFSEQPLATES</td>
+            <td></td>
+            <td></td>
+            <td>in house seq plate</td>
+            <td>96 Well</td>
+            <td>Back-up</td>
+            <td>plate 494</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>ZFSEQPLATES</td>
+            <td></td>
+            <td></td>
+            <td>in house seq plate</td>
+            <td>96 Well</td>
+            <td>Working</td>
+            <td>plate 494</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>Illumina</td>
+            <td></td>
+            <td></td>
+            <td>in house plate</td>
+            <td>96 Well</td>
+            <td>Back-up</td>
+            <td>plate 8</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>Illumina</td>
+            <td></td>
+            <td></td>
+            <td>in house plate</td>
+            <td>96 Well</td>
+            <td>Working</td>
+            <td>plate 8</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>ds12 plate</td>
+            <td></td>
+            <td></td>
+            <td>Rameen (arrmog); BS Converted DNA x 24; 2015-05-12; ds12 resuspended samples (T183)</td>
+            <td>96 Well</td>
+            <td>Unknown</td>
+            <td>1 plate</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>Clone request plates</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Archive</td>
+            <td>1 - 84</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>bPLA-SEQ-1</td>
+            <td></td>
+            <td></td>
+            <td>in house seq plate</td>
+            <td>96 Well</td>
+            <td>Unknown</td>
+            <td>1 plate</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>bBT_SEQ_1</td>
+            <td></td>
+            <td></td>
+            <td>in house seq plates</td>
+            <td>96 Well</td>
+            <td>Unknown</td>
+            <td>1 - 4</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>bPD-SEQ1</td>
+            <td></td>
+            <td></td>
+            <td>in house seq plate</td>
+            <td>96 Well</td>
+            <td>Unknown</td>
+            <td>1 plate</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>Cow_MHCSEQ_1</td>
+            <td></td>
+            <td></td>
+            <td>in house seq plate</td>
+            <td>96 Well</td>
+            <td>Unknown</td>
+            <td>1 plate</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>Burcu</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Unknown</td>
+            <td>bags 1 - 6</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>DH10B Master Stock</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tube</td>
+            <td>Unknown</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>H06N16</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tubes</td>
+            <td>Unknown</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>Pbg</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Unknown</td>
+            <td>2 Plates</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>Competent Cells</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tubes</td>
+            <td>Unknown</td>
+            <td>2 small tubes</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>1004 a,b,c,d</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>96 Well</td>
+            <td>Unknown</td>
+            <td>4 Boxes</td>
+        </tr>
+        
         </table>
     </div>
 </body>
