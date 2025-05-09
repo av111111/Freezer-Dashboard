@@ -116,8 +116,8 @@
         <p>Status: <span class="status dispose">Dispose</span></p>
         <p>Age: Clean years</p>
         <p>Energy Use: 17 kwh/Day</p>
-        <p>Capacity: 0 / 0</p>
-        <div class="capacity"></div>
+        <p>Capacity: 3 / 6</p>
+        <div class="capacity"><div class="shelf free" onclick="filterShelf('Shelf 1')">Shelf 1</div><div class="shelf free" onclick="filterShelf('Shelf 2')">Shelf 2</div><div class="shelf free" onclick="filterShelf('Shelf 3')">Shelf 3</div><div class="shelf occupied" onclick="filterShelf('Shelf 4')">Shelf 4</div><div class="shelf occupied" onclick="filterShelf('Shelf 5')">Shelf 5</div><div class="shelf occupied" onclick="filterShelf('Shelf 6')">Shelf 6</div></div>
         <button class="clear-selection" onclick="clearFilter()">Clear selection</button>
         <h2>Contents</h2>
         <table id="contentsTable">
@@ -142,6 +142,127 @@
                 <td><input type="text" onkeyup="filterTable()" placeholder="Filter Plate Number"></td>
             </tr>
     
+        <tr>
+            <td>Shelf 1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>Eimer BACs</td>
+            <td></td>
+            <td></td>
+            <td>Eimer BACs batch 2 from Nov 2004</td>
+            <td>384 Well</td>
+            <td>Picking</td>
+            <td>1 - 21</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>lactENDS BACs</td>
+            <td></td>
+            <td>lact_ends</td>
+            <td>in house seq plates</td>
+            <td>384 Well</td>
+            <td>Working</td>
+            <td>1 - 8</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>FOS-zFPRESEQ</td>
+            <td></td>
+            <td></td>
+            <td>In house plates</td>
+            <td>384 Well</td>
+            <td>Picking</td>
+            <td>1 - 22</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 4</td>
+            <td>Tvivbac</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>384 Well</td>
+            <td>Picking</td>
+            <td>1 - 39</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 5</td>
+            <td>CPG-H96</td>
+            <td></td>
+            <td></td>
+            <td>also called CPG pilot? Mike Quail, CpG Library Prof Adrian Bird (in house plates)</td>
+            <td>96 Well</td>
+            <td>Back-up</td>
+            <td>1 - 306</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>zFPRESEQ</td>
+            <td></td>
+            <td></td>
+            <td>In house plates</td>
+            <td>384 Well</td>
+            <td>Back-up</td>
+            <td>1 - 131</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td>HaemAPOBACs</td>
+            <td></td>
+            <td>bHA</td>
+            <td>Haemonchus contortus HaemAPO BAC Library</td>
+            <td>384 Well</td>
+            <td>Back-up</td>
+            <td>1 - 18</td>
+        </tr>
+        
+        <tr>
+            <td>Shelf 6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
         </table>
     </div>
 </body>
